@@ -29,6 +29,14 @@
             width: 150px;
         }
 
+        #btn-unclicked-third {
+            position: absolute;
+            transition: .3s;
+            padding: 10px;
+            height: 40px;
+            width: 250px;
+        }
+
         .noDisp {
             display: none;
         }
@@ -42,10 +50,10 @@
                 <img src="be-friend.gif" alt="GIF" style="max-width: 100%;">
                 <div class="row justify-content-center mt-4">
                     <div class="col-auto">
-                        <button id="btn-unclicked" class="btn btn-danger">Euwww No 🤮!</button>
+                        <button id="btn-unclicked" class="btn btn-danger no-first">Euwww No 🤮!</button>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-primary">YES!</button>
+                        <button class="btn btn-primary yes-first">YES!</button>
                     </div>
                 </div>
             </div>
@@ -60,6 +68,18 @@
                     </div>
                 </div>
             </div>
+            <div id="third" class="noDisp">
+                <img src="toothless-dragon.gif" alt="GIF" style="max-width: 100%;">
+                <h1>Yeayyyy</h1>
+                <div class="row justify-content-center mt-4">
+                    <div class="col-auto">
+                        <button id="btn-unclicked-third" class="btn btn-danger">JUST KIDDIN WKWKW 🤣!</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary">hi!</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="bootstrap.bundle.min.js"></script>
@@ -69,17 +89,49 @@
             button.style.left = `${Math.ceil(Math.random() * 90)}%`;
             button.style.top = `${Math.ceil(Math.random() * 90)}%`;
         });
-        button.addEventListener('click', function () {
-            alert('you clicked me')
-        })
+        button.addEventListener('touchstart', function (event) {
+            event.preventDefault(); // Prevent default touch event (e.g., scrolling)
+            button.style.left = `${Math.ceil(Math.random() * 90)}%`;
+            button.style.top = `${Math.ceil(Math.random() * 90)}%`;
+        });
 
         const buttonSec = document.getElementById('btn-unclicked-sec');
         buttonSec.addEventListener('mouseover', function () {
             buttonSec.style.left = `${Math.ceil(Math.random() * 90)}%`;
             buttonSec.style.top = `${Math.ceil(Math.random() * 90)}%`;
         });
-        buttonSec.addEventListener('click', function () {
-            alert('you clicked me')
+        buttonSec.addEventListener('touchstart', function (event) {
+            event.preventDefault(); // Prevent default touch event (e.g., scrolling)
+            buttonSec.style.left = `${Math.ceil(Math.random() * 90)}%`;
+            buttonSec.style.top = `${Math.ceil(Math.random() * 90)}%`;
+        });
+
+        const buttonThird = document.getElementById('btn-unclicked-third');
+        buttonThird.addEventListener('mouseover', function () {
+            buttonThird.style.left = `${Math.ceil(Math.random() * 90)}%`;
+            buttonThird.style.top = `${Math.ceil(Math.random() * 90)}%`;
+        });
+        buttonThird.addEventListener('touchstart', function (event) {
+            event.preventDefault(); // Prevent default touch event (e.g., scrolling)
+            buttonThird.style.left = `${Math.ceil(Math.random() * 90)}%`;
+            buttonThird.style.top = `${Math.ceil(Math.random() * 90)}%`;
+        });
+        
+
+        const yesFirst = document.querySelector(".yes-first");
+        const noFirst = document.querySelector(".no-first");
+        const first = document.getElementById("first");
+        const sec = document.getElementById("sec");
+        const third = document.getElementById("third");
+
+        noFirst.addEventListener('click', function() {
+            first.classList.add("noDisp");
+            sec.classList.remove("noDisp")
+        })
+
+        yesFirst.addEventListener('click', function() {
+            first.classList.add("noDisp");
+            third.classList.remove("noDisp")
         })
 
     </script>
