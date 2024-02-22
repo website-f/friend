@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Div</title>
+    <link rel="stylesheet" href="bootstrap.min.css"> <!-- assuming you have Bootstrap CSS file -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(235, 235, 235);
+        }
+
+        #btn-unclicked {
+            position: absolute;
+            transition: .3s;
+            padding: 10px;
+            height: 40px;
+            width: 150px;
+        }
+
+        #btn-unclicked-sec {
+            position: absolute;
+            transition: .3s;
+            padding: 10px;
+            height: 40px;
+            width: 150px;
+        }
+
+        .noDisp {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="container text-center">
+            <div id="first">
+                <img src="be-friend.gif" alt="GIF" style="max-width: 100%;">
+                <div class="row justify-content-center mt-4">
+                    <div class="col-auto">
+                        <button id="btn-unclicked" class="btn btn-danger">Euwww No 🤮!</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary">YES!</button>
+                    </div>
+                </div>
+            </div>
+            <div id="sec" class="noDisp">
+                <img src="no-friends.gif" alt="GIF" style="max-width: 100%;">
+                <div class="row justify-content-center mt-4">
+                    <div class="col-auto">
+                        <button id="btn-unclicked-sec" class="btn btn-danger">STILL NO!</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary">Ok laaa 🙄🙄!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script>
+        const button = document.getElementById('btn-unclicked');
+        button.addEventListener('mouseover', function () {
+            button.style.left = `${Math.ceil(Math.random() * 90)}%`;
+            button.style.top = `${Math.ceil(Math.random() * 90)}%`;
+        });
+        button.addEventListener('click', function () {
+            alert('you clicked me')
+        })
+
+        const buttonSec = document.getElementById('btn-unclicked-sec');
+        buttonSec.addEventListener('mouseover', function () {
+            buttonSec.style.left = `${Math.ceil(Math.random() * 90)}%`;
+            buttonSec.style.top = `${Math.ceil(Math.random() * 90)}%`;
+        });
+        buttonSec.addEventListener('click', function () {
+            alert('you clicked me')
+        })
+
+    </script>
+</body>
+</html>
