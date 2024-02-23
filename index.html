@@ -41,6 +41,10 @@
             display: none;
         }
 
+        .marginTop {
+            margin-top: 50px;
+        }
+
     </style>
 </head>
 <body>
@@ -53,7 +57,7 @@
                         <button id="btn-unclicked" class="btn btn-danger no-first">Euwww No 🤮!</button>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-primary yes-first">YES!</button>
+                        <button class="btn btn-primary marginTop yes-first">YES!</button>
                     </div>
                 </div>
             </div>
@@ -61,24 +65,46 @@
                 <img src="no-friends.gif" alt="GIF" style="max-width: 100%;">
                 <div class="row justify-content-center mt-4">
                     <div class="col-auto">
-                        <button id="btn-unclicked-sec" class="btn btn-danger">STILL NO!</button>
+                        <button id="btn-unclicked-sec" class="btn btn-danger no-sec">STILL NO!</button>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-primary">Ok laaa 🙄🙄!</button>
+                        <button class="btn btn-primary marginTop yes-sec">Ok laaa 🙄🙄!</button>
                     </div>
                 </div>
             </div>
             <div id="third" class="noDisp">
-                <img src="toothless-dragon.gif" alt="GIF" style="max-width: 100%;">
-                <h1>Yeayyyy</h1>
+                <img src="number.gif" alt="GIF" style="max-width: 100%;">
                 <div class="row justify-content-center mt-4">
                     <div class="col-auto">
-                        <button id="btn-unclicked-third" class="btn btn-danger">JUST KIDDIN WKWKW 🤣!</button>
+                        <button id="btn-unclicked-third" class="btn btn-danger no-third">NOOOOO !</button>
                     </div>
                     <div class="col-auto">
-                        <a href="https://api.whatsapp.com/send?phone=601162316682&text=Hi" class="btn btn-primary">hi!</a>
+                        <button class="btn btn-primary yes-third marginTop">Sure can!</button>
                     </div>
                 </div>
+            </div>
+            <div id="fourth" class="noDisp">
+                <h2>Drop your number below (don't worry, this is not a scam)</h2>
+                <img src="down.gif" alt="GIF" style="max-width: 100%;">
+                <div class="row justify-content-center mt-4">
+                    <div class="col-auto">
+                        <a href="https://api.whatsapp.com/send?phone=601162316682" class="btn btn-primary">Click Here !</a>
+                    </div>
+                </div>
+            </div>
+            <div id="fifth" class="noDisp">
+                <img src="why.gif" alt="GIF" style="max-width: 100%;">
+                <div class="row justify-content-center mt-4">
+                    <div class="col-auto">
+                        <button class="btn btn-danger no-fifth">I don't want to be your friend !</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary yes-fifth">OK LAA I WILL GIVE 🙄🙄!</button>
+                    </div>
+                </div>
+            </div>
+            <div id="sixth" class="noDisp">
+                <img src="ok.gif" alt="GIF" style="max-width: 100%;">
             </div>
         </div>
     </div>
@@ -119,20 +145,58 @@
         
 
         const yesFirst = document.querySelector(".yes-first");
+        const yesSec = document.querySelector(".yes-sec");
+        const yesThird = document.querySelector(".yes-third");
+        const yesFifth = document.querySelector(".yes-fifth");
         const noFirst = document.querySelector(".no-first");
+        const noSec= document.querySelector(".no-sec");
+        const noThird = document.querySelector(".no-third");
+        const noFifth = document.querySelector(".no-fifth");
         const first = document.getElementById("first");
         const sec = document.getElementById("sec");
         const third = document.getElementById("third");
+        const fourth = document.getElementById("fourth");
+        const fifth = document.getElementById("fifth");
+        const sixth = document.getElementById("sixth");
 
         noFirst.addEventListener('click', function() {
             first.classList.add("noDisp");
             sec.classList.remove("noDisp")
         })
 
+        noSec.addEventListener('click', function() {
+            sec.classList.add("noDisp");
+            fifth.classList.remove("noDisp")
+        })
+
+        noThird.addEventListener('click', function() {
+            third.classList.add("noDisp");
+            fifth.classList.remove("noDisp")
+        })
+
+        noFifth.addEventListener('click', function() {
+            fifth.classList.add("noDisp");
+            sixth.classList.remove("noDisp")
+        })
+
         yesFirst.addEventListener('click', function() {
             first.classList.add("noDisp");
             third.classList.remove("noDisp")
         })
+
+        yesThird.addEventListener('click', function() {
+            third.classList.add("noDisp");
+            fourth.classList.remove("noDisp")
+        })
+
+        yesFifth.addEventListener('click', function() {
+            fifth.classList.add("noDisp");
+            fourth.classList.remove("noDisp")
+        })
+
+
+
+        
 
     </script>
 </body>
